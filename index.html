@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Shine | Premium Detailing</title>
+    <title>Harry's Clean & Clear wash| Premium Car washing</title>
     <style>
         :root {
             --royal-purple: #4b0082;
@@ -83,4 +83,129 @@
 
         /* Your Requested Bullet Points */
         .package-list {
-            text-align: left
+            text-align: left;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .package-list li {
+            padding: 10px 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .package-list li::before {
+            content: '✦';
+            color: var(--accent-gold);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--white);
+            display: block;
+        }
+
+        /* Booking Section */
+        .booking {
+            background: var(--white);
+            color: #1a002e;
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 50px;
+            border-radius: 30px;
+            text-align: center;
+        }
+
+        .booking h2 { font-size: 2rem; margin-bottom: 10px; }
+
+        input, select {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 2px solid #eee;
+            font-size: 1rem;
+        }
+
+        .btn {
+            background: var(--royal-purple);
+            color: white;
+            border: none;
+            padding: 20px;
+            width: 100%;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #2e004f;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Royal Shine</h1>
+        <p>MOBILE DETAILING EXCELLENCE</p>
+    </header>
+
+    <div class="container">
+        <div class="box">
+            <h3>Basic Care Package</h3>
+            <ul class="package-list">
+                <li>Car foam wash</li>
+                <li>Car wax finish</li>
+                <li>Rims wash</li>
+            </ul>
+            <span class="price">$40</span>
+        </div>
+
+        <div class="box">
+            <h3>Mobile Service</h3>
+            <p>disclamer I will need to use your water. detailing at your doorstep, home, or office.</p>
+            <p style="color: var(--accent-gold); font-weight: bold;">We Come To You</p>
+        </div>
+
+        <div class="box">
+            <h3>Eco-Friendly</h3>
+            <p>Using premium pH-balanced soaps and water-saving technology to protect your car and the planet.</p>
+            <p style="color: var(--accent-gold); font-weight: bold;">Spot-Free Finish</p>
+        </div>
+    </div>
+
+    <section class="booking">
+        <h2>Book Your Appointment</h2>
+        <p>Experience the royal treatment today.</p>
+        <input type="text" placeholder="Your Name">
+        <input type="text" placeholder="Phone Number">
+        <select>
+            <option>Basic Care Package - $20</option>
+            <option> deep clean - 40$</option>
+            <option>The Royal Treatment - $150</option>
+        </select>
+        <button class="btn">Confirm My Shine</button>
+    </section>
+
+    <footer>
+        &copy; 2026 Royal Shine Car Wash | Premium Detailing Services
+    </footer>
+
+</body>
+</html>
