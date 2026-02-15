@@ -19,7 +19,7 @@
             color: var(--white);
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centers everything globally */
+            align-items: center; /* Centers everything on the page */
         }
 
         header {
@@ -28,6 +28,7 @@
             padding: 60px 0;
             text-align: center;
             border-bottom: 2px solid var(--accent-gold);
+            margin-bottom: 20px;
         }
 
         header h1 {
@@ -38,14 +39,14 @@
             letter-spacing: 3px;
         }
 
-        /* This is the magic part that creates rows of two */
+        /* Grid Logic: Creates the rows of two in the middle */
         .container {
             display: flex;
-            flex-wrap: wrap; /* Allows boxes to move to next line */
-            justify-content: center; /* Centers the boxes horizontally */
-            gap: 20px;
-            padding: 40px 10px;
-            max-width: 700px; /* Limits width so only 2 boxes fit per row */
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 25px;
+            padding: 20px;
+            max-width: 700px; /* Limits width to fit exactly 2 boxes */
             margin: 0 auto;
         }
 
@@ -54,11 +55,13 @@
             border: 1px solid rgba(255, 204, 0, 0.3);
             border-radius: 20px;
             padding: 30px;
-            width: 300px; /* Fixed width for consistency */
+            width: 310px; /* Fixed width to keep grid tight */
             box-sizing: border-box;
             transition: 0.3s;
             text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .box:hover {
@@ -69,6 +72,7 @@
         .box h3 {
             color: var(--accent-gold);
             margin-top: 0;
+            font-size: 1.5rem;
             border-bottom: 1px solid rgba(255,204,0,0.2);
             padding-bottom: 10px;
         }
@@ -77,30 +81,41 @@
             text-align: left;
             list-style: none;
             padding: 0;
+            margin: 15px 0;
+        }
+
+        .package-list li {
+            margin-bottom: 8px;
         }
 
         .package-list li::before {
             content: '💜 ';
-            margin-right: 5px;
+            margin-right: 8px;
         }
 
         .price {
             font-size: 1.8rem;
             font-weight: bold;
             color: var(--white);
-            display: block;
-            margin-top: 15px;
+            margin-top: auto; /* Pushes price to the bottom of the box */
         }
 
+        /* Booking Form Styles */
         .booking {
             background: var(--white);
             color: #1a002e;
             width: 90%;
             max-width: 500px;
-            margin: 40px 0;
+            margin: 50px 0;
             padding: 40px;
             border-radius: 30px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .booking h2 {
+            margin-top: 0;
+            color: var(--royal-purple);
         }
 
         input, select {
@@ -109,24 +124,32 @@
             margin: 10px 0;
             border-radius: 8px;
             border: 1px solid #ccc;
+            font-size: 1rem;
         }
 
         .btn {
             background: var(--royal-purple);
             color: white;
             border: none;
-            padding: 15px;
+            padding: 18px;
             width: 100%;
             border-radius: 8px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: bold;
             cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #350063;
+            transform: scale(1.02);
         }
 
         footer {
-            padding: 30px;
+            padding: 40px;
             opacity: 0.6;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
+            text-align: center;
         }
     </style>
 </head>
@@ -170,24 +193,27 @@
 
         <div class="box">
             <h3>Things to Know</h3>
-            <p>I will need to use your water. Trust me, it's worth it. I do the job right every time.</p>
+            <p style="text-align: left; line-height: 1.5;">I will need to use your water connection. Trust me, it's worth it. I do a thorough job that puts automatic car washes to shame.</p>
+            <p style="color: var(--accent-gold); font-weight: bold; margin-top: 10px;">Quality Guaranteed</p>
         </div>
     </div>
 
     <section class="booking">
-        <h2>Book Now</h2>
+        <h2>Book Your Wash</h2>
+        <p>Enter your info and I'll get back to you!</p>
         <input type="text" placeholder="Your Name">
         <input type="text" placeholder="Phone Number">
         <select>
+            <option disabled selected>Select a Package</option>
             <option>Basic Wash - $15</option>
             <option>Care Package - $25</option>
             <option>Deep Clean - $45</option>
         </select>
-        <button class="btn">Confirm Appointment</button>
+        <button class="btn">CONFIRM APPOINTMENT</button>
     </section>
 
     <footer>
-        &copy; 2026 Harry's Clear & Clean
+        &copy; 2026 Harry's Clear & Clean | Hand-Crafted Mobile Detailing
     </footer>
 
 </body>
