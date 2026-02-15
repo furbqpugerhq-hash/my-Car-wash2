@@ -19,7 +19,7 @@
             color: var(--white);
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centers everything on the page */
+            align-items: center;
         }
 
         header {
@@ -39,14 +39,13 @@
             letter-spacing: 3px;
         }
 
-        /* Grid Logic: Creates the rows of two in the middle */
         .container {
             display: flex;
             flex-wrap: wrap; 
             justify-content: center; 
             gap: 25px;
             padding: 20px;
-            max-width: 700px; /* Limits width to fit exactly 2 boxes */
+            max-width: 700px;
             margin: 0 auto;
         }
 
@@ -55,18 +54,12 @@
             border: 1px solid rgba(255, 204, 0, 0.3);
             border-radius: 20px;
             padding: 30px;
-            width: 310px; /* Fixed width to keep grid tight */
+            width: 310px;
             box-sizing: border-box;
             transition: 0.3s;
             text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .box:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-gold);
         }
 
         .box h3 {
@@ -84,10 +77,6 @@
             margin: 15px 0;
         }
 
-        .package-list li {
-            margin-bottom: 8px;
-        }
-
         .package-list li::before {
             content: '💜 ';
             margin-right: 8px;
@@ -97,7 +86,7 @@
             font-size: 1.8rem;
             font-weight: bold;
             color: var(--white);
-            margin-top: auto; /* Pushes price to the bottom of the box */
+            margin-top: auto;
         }
 
         /* Booking Form Styles */
@@ -111,11 +100,6 @@
             border-radius: 30px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .booking h2 {
-            margin-top: 0;
-            color: var(--royal-purple);
         }
 
         input, select {
@@ -142,13 +126,11 @@
 
         .btn:hover {
             background: #350063;
-            transform: scale(1.02);
         }
 
         footer {
             padding: 40px;
             opacity: 0.6;
-            font-size: 0.9rem;
             text-align: center;
         }
     </style>
@@ -193,7 +175,7 @@
 
         <div class="box">
             <h3>Things to Know</h3>
-            <p style="text-align: left; line-height: 1.5;">I will need to use your water connection. Trust me, it's worth it. I do a thorough job that puts automatic car washes to shame.</p>
+            <p style="text-align: left; line-height: 1.5;">I will need to use your water connection. I do a thorough job that puts automatic car washes to shame.</p>
             <p style="color: var(--accent-gold); font-weight: bold; margin-top: 10px;">Quality Guaranteed</p>
         </div>
     </div>
@@ -201,17 +183,19 @@
     <section class="booking">
         <h2>Book Your Wash</h2>
         <p>Enter your info and I'll get back to you!</p>
-        <input type="text" placeholder="Your Name">
-        <input type="text" placeholder="Phone Number">
-        <select>
-            <option disabled selected>Select a Package</option>
-            <option>Basic Wash - $15</option>
-            <option>Care Package - $25</option>
-            <option>Deep Clean - $45</option>
-        </select>
-        <button class="btn">CONFIRM APPOINTMENT</button>
+        
+        <form action="PASTE_YOUR_FORMSPREE_URL_HERE" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <select name="package" required>
+                <option value="" disabled selected>Select a Package</option>
+                <option value="Basic Wash - $15">Basic Wash - $15</option>
+                <option value="Care Package - $25">Care Package - $25</option>
+                <option value="Deep Clean - $45">Deep Clean - $45</option>
+            </select>
+            <button type="submit" class="btn">CONFIRM APPOINTMENT</button>
+        </form>
     </section>
-
     <footer>
         &copy; 2026 Harry's Clear & Clean | Hand-Crafted Mobile Detailing
     </footer>
