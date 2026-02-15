@@ -17,31 +17,35 @@
             margin: 0;
             background-color: var(--deep-midnight);
             color: var(--white);
-            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers everything globally */
         }
 
         header {
+            width: 100%;
             background: linear-gradient(135deg, #2e004f 0%, #0f001a 100%);
-            padding: 80px 20px;
+            padding: 60px 0;
             text-align: center;
             border-bottom: 2px solid var(--accent-gold);
         }
 
         header h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin: 0;
             color: var(--accent-gold);
             text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 3px;
         }
 
+        /* This is the magic part that creates rows of two */
         .container {
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 60px 20px;
-            flex-wrap: wrap;
-            max-width: 1200px;
+            flex-wrap: wrap; /* Allows boxes to move to next line */
+            justify-content: center; /* Centers the boxes horizontally */
+            gap: 20px;
+            padding: 40px 10px;
+            max-width: 700px; /* Limits width so only 2 boxes fit per row */
             margin: 0 auto;
         }
 
@@ -49,22 +53,22 @@
             background: linear-gradient(145deg, #2e004f, #1a002e);
             border: 1px solid rgba(255, 204, 0, 0.3);
             border-radius: 20px;
-            padding: 40px 30px;
-            width: 300px;
-            transition: all 0.4s ease;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            padding: 30px;
+            width: 300px; /* Fixed width for consistency */
+            box-sizing: border-box;
+            transition: 0.3s;
             text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         }
 
         .box:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             border-color: var(--accent-gold);
         }
 
         .box h3 {
             color: var(--accent-gold);
-            font-size: 1.6rem;
-            margin-bottom: 20px;
+            margin-top: 0;
             border-bottom: 1px solid rgba(255,204,0,0.2);
             padding-bottom: 10px;
         }
@@ -73,63 +77,56 @@
             text-align: left;
             list-style: none;
             padding: 0;
-            margin-bottom: 20px;
-        }
-
-        .package-list li {
-            padding: 8px 0;
-            display: flex;
-            align-items: center;
         }
 
         .package-list li::before {
-            content: '✦';
-            color: var(--accent-gold);
-            margin-right: 10px;
+            content: '💜 ';
+            margin-right: 5px;
         }
 
         .price {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: var(--white);
+            display: block;
+            margin-top: 15px;
         }
 
         .booking {
             background: var(--white);
             color: #1a002e;
-            max-width: 600px;
-            margin: 60px auto;
-            padding: 50px;
+            width: 90%;
+            max-width: 500px;
+            margin: 40px 0;
+            padding: 40px;
             border-radius: 30px;
             text-align: center;
         }
 
         input, select {
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             margin: 10px 0;
-            border-radius: 10px;
-            border: 2px solid #eee;
+            border-radius: 8px;
+            border: 1px solid #ccc;
         }
 
         .btn {
             background: var(--royal-purple);
             color: white;
             border: none;
-            padding: 20px;
+            padding: 15px;
             width: 100%;
-            border-radius: 10px;
-            font-size: 1.2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
-            text-transform: uppercase;
         }
 
         footer {
-            padding: 40px;
-            text-align: center;
+            padding: 30px;
             opacity: 0.6;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
     </style>
 </head>
@@ -137,7 +134,7 @@
 
     <header>
         <h1>Harry's Clear & Clean</h1>
-        <p>MOBILE CLEANING SERVICE</p>
+        <p>PREMIUM MOBILE WASHING</p>
     </header>
 
     <div class="container">
@@ -164,9 +161,34 @@
             <h3>Deep Clean</h3>
             <ul class="package-list">
                 <li>Foam Cleanse</li>
-                <li>Rim & Tire Wash</li>
                 <li>Window washing</li>
+                <li>Tire & Rim Wash</li>
                 <li>Windshield solution</li>
             </ul>
             <span class="price">$45</span>
         </div>
+
+        <div class="box">
+            <h3>Things to Know</h3>
+            <p>I will need to use your water. Trust me, it's worth it. I do the job right every time.</p>
+        </div>
+    </div>
+
+    <section class="booking">
+        <h2>Book Now</h2>
+        <input type="text" placeholder="Your Name">
+        <input type="text" placeholder="Phone Number">
+        <select>
+            <option>Basic Wash - $15</option>
+            <option>Care Package - $25</option>
+            <option>Deep Clean - $45</option>
+        </select>
+        <button class="btn">Confirm Appointment</button>
+    </section>
+
+    <footer>
+        &copy; 2026 Harry's Clear & Clean
+    </footer>
+
+</body>
+</html>
